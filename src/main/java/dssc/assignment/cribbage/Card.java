@@ -6,12 +6,11 @@ public class Card {
     private Suite suite;
     private String rank;
 
-    public Card(String parsed){
-        if (parsed.equals("JS")){
+    public Card(String parsed) {
+        if (parsed.equals("JS")) {
             this.rank = "J";
             this.suite = Suite.SPADES;
-        }
-        else {
+        } else {
             this.rank = "5";
             this.suite = Suite.HEART;
 
@@ -20,12 +19,11 @@ public class Card {
 
     }
 
-    public String rank() {
-
+    public String getRank() {
         return rank;
     }
-    public Suite suite() {
 
+    public Suite getSuite() {
         return suite;
     }
 

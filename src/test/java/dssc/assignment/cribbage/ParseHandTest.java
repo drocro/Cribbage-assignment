@@ -1,6 +1,9 @@
 package dssc.assignment.cribbage;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,24 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParseHandTest {
 
-
-    @Test
-    void parseOneCard() {
-        Card card = CardParser.parseCard("5H");
+    @ParameterizedTest
+    @CsvSource({"5,HEART", "J,SPADES"})
+    void parseOneCard(String rank,String suite){
+        Card card = CardParser.parseCard(new StringBuilder().append(rank.charAt(0)).append(suite.charAt(0)).toString());
         assertAll(
-                () -> assertEquals("5", card.rank()),
-                () -> assertEquals(Suite.HEART, card.suite())
+                () -> assertEquals(rank, card.getRank()),
+                () -> assertEquals(suite, card.getSuite().toString())
         );
     }
-
-    @Test
-    void parseOtherCard() {
-        Card card = CardParser.parseCard("JS");
-        assertAll(
-                () -> assertEquals("J", card.rank()),
-                () -> assertEquals(Suite.SPADES, card.suite())
-        );
-    }
-
 
 }
