@@ -1,5 +1,5 @@
 package dssc.assignment.cribbage;
 
 public enum Suite {
-    HEART
+    HEART, SPADES
 }

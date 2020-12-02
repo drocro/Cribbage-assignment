@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParseHandTest {
 
-    private String test;
 
     @Test
     void parseOneCard() {
@@ -18,4 +17,15 @@ public class ParseHandTest {
                 () -> assertEquals(Suite.HEART, card.suite())
         );
     }
+
+    @Test
+    void parseOtherCard() {
+        Card card = CardParser.parseCard("JS");
+        assertAll(
+                () -> assertEquals("J", card.rank()),
+                () -> assertEquals(Suite.SPADES, card.suite())
+        );
+    }
+
+
 }
