@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParseHandTest {
 
+    private String test;
+
     @Test
     void parseOneCard() {
         Card card = CardParser.parseCard("5H");
