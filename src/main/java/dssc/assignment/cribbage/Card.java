@@ -1,6 +1,7 @@
 package dssc.assignment.cribbage;
 
 //ciao Ivan
+//tutto bene
 
 public class Card {
 
